@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <link href="index2.css" rel="stylesheet" type="text/css">
+ <script src="index2.js"> </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>
+        Weber Money Sheets
+    </h1>
+    <h2 id="aan">
+     
+    </h2>
+    <h2 id="aan2">
+       
+    </h2>
+    
+    <h2 id="aan4">
+
+    </h2>
+
+
+    <script>
+      var str=[];
+      var result=0;
+      var str2=[];
+      var result2=0;
+      var list1=[];
+      function fn1(){
+          str=document.getElementById("tbox").value;
+           result+=parseFloat(str);
+          document.getElementById("aan").innerHTML="Your Expenses so far"+result;
+          list1.push(str);
+          
+         
+        }
+        function fn2(){
+          str2=document.getElementById("tbox2").value;
+           result2+=parseFloat(str2);
+          document.getElementById("aan2").innerHTML="Your Savings so far"+result2;
+            
+        }
+        function fn3(){
+            list1.join();
+            
+                 console.log(list1);
+                 document.getElementById("aan3").innerHTML="Your Each Expenses are: "+list1;
+
+            
+        }
+        function fn4(){
+            list1.join();
+            
+                 console.log(list1);
+                  var fsum=list1-result2;
+                 document.getElementById("aan4").innerHTML="Your Final Balance is: "+fsum;
+
+            
+        }
+        function fn5(){
+            var dl=document.getElementById("tbox3").value;
+            list1.join();
+            console.log(list1);
+             list1=list1.filter(function(value){
+               return value!==dl;
+            });
+            console.log(list1);
+            document.getElementById("aan5").innerHTML="New Expense"+list1;
+        }
+
+    </script>
+
+</head>
+<body>
+<input id="tbox" placeholder="enter expense">
+<br>
+<button onclick="fn1()" id="btn"> Add to Expenses</button>
+<br>
+<input id="tbox2" placeholder="savings">
+<br>
+<button onclick="fn2()" id="btn2">Add to Savings</button>
+<br> 
+
+
+
+<input id="tbox3" placeholder="Expense to Delete ">
+<br>
+<button onclick="fn5()" id="btn5"> Delete this Expense</button>
+<br> <br>
+<button onclick="fn3()" id="btn3">View My Expenses</button>
+<br>
+<button onclick="fn4()" id="btn4"> Calculate Final Balance</button>
+<br>
+<h2 id="aan3">
+
+</h2>
+<br>
+<h2 id="aan5">
+
+</h2>
+</body>
+</html>
